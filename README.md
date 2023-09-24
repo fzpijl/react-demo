@@ -14,11 +14,15 @@ const element3 = (
     <Square />
   </div>
 );
+// 会被编译为
+// const element3 = _jsx("div", {
+//   children: _jsx(Square, {})
+// });
 ```
 
 ## react 组件
 
-一个函数，返回 UI
+一个函数，返回 react element
 
 ```js
 function Square() {
