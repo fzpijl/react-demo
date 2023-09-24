@@ -3,9 +3,10 @@
 ```js
 const element1 = <button>text</button>;
 
+const value = "title";
 const element2 = (
   <div>
-    <h1>title</h1>
+    <h1>{value}</h1>
   </div>
 );
 
@@ -49,7 +50,7 @@ function Square() {
 
 ## 向组件传递 props
 
-```javascript
+```js
 function Square({ value }) {
   return <button>{value}</button>;
 }
@@ -67,5 +68,31 @@ function Square() {
     setValue("O");
   }
   return <button onClick={clickHandler}>{value}</button>;
+}
+```
+
+## 条件渲染
+
+```js
+function Hello({ name }) {
+  return name && <div>hello {name}</div>;
+}
+```
+
+## 渲染列表
+
+```js
+// const data = [
+//   { name: "a", id: 0 },
+//   { name: "b", id: 2 },
+// ];
+function List({ data }) {
+  return (
+    <ul>
+      {data.map((it) => (
+        <li key={it.id}>{it.name}</li>
+      ))}
+    </ul>
+  );
 }
 ```
